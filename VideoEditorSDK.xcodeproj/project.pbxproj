@@ -16,10 +16,6 @@
 		7E6C4AA12174965D00346D9C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E6C4A9F2174965D00346D9C /* Main.storyboard */; };
 		7E6C4AA32174965E00346D9C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E6C4AA22174965E00346D9C /* Assets.xcassets */; };
 		7E6C4AA62174965E00346D9C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E6C4AA42174965E00346D9C /* LaunchScreen.storyboard */; };
-		7E6C4B3821749FF800346D9C /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E6C4B3721749FF800346D9C /* libz.tbd */; };
-		7E6C4B3A2174A01600346D9C /* libbz2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E6C4B392174A01600346D9C /* libbz2.tbd */; };
-		7E6C4B3C2174A02000346D9C /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E6C4B3B2174A02000346D9C /* libiconv.tbd */; };
-		7ED4EA092175A52000148B79 /* Viet-Nam-Da-LAB.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 7ED4EA082175A52000148B79 /* Viet-Nam-Da-LAB.mp4 */; };
 		7ED4EA0B2175D49400148B79 /* VEManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED4EA0A2175D49400148B79 /* VEManager.swift */; };
 		7ED4EA0D2175D4BA00148B79 /* VEFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED4EA0C2175D4BA00148B79 /* VEFile.swift */; };
 		7ED4EA0F2175D73C00148B79 /* VEExport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED4EA0E2175D73C00148B79 /* VEExport.swift */; };
@@ -41,7 +37,6 @@
 		7E6C4B3721749FF800346D9C /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		7E6C4B392174A01600346D9C /* libbz2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libbz2.tbd; path = usr/lib/libbz2.tbd; sourceTree = SDKROOT; };
 		7E6C4B3B2174A02000346D9C /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
-		7ED4EA082175A52000148B79 /* Viet-Nam-Da-LAB.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Viet-Nam-Da-LAB.mp4"; sourceTree = "<group>"; };
 		7ED4EA0A2175D49400148B79 /* VEManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VEManager.swift; sourceTree = "<group>"; };
 		7ED4EA0C2175D4BA00148B79 /* VEFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VEFile.swift; sourceTree = "<group>"; };
 		7ED4EA0E2175D73C00148B79 /* VEExport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VEExport.swift; sourceTree = "<group>"; };
@@ -52,9 +47,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7E6C4B3C2174A02000346D9C /* libiconv.tbd in Frameworks */,
-				7E6C4B3A2174A01600346D9C /* libbz2.tbd in Frameworks */,
-				7E6C4B3821749FF800346D9C /* libz.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,7 +77,6 @@
 				7E4D2F4E21770D0F008420DC /* Dung-Quen-Ten-Anh-Hoa-Vinh.mp3 */,
 				7E4032472178403D00BA3A53 /* splited.mp4 */,
 				7E4032492178405A00BA3A53 /* test.mp4 */,
-				7ED4EA082175A52000148B79 /* Viet-Nam-Da-LAB.mp4 */,
 				7E6C4A9B2174965D00346D9C /* AppDelegate.swift */,
 				7E6C4A9D2174965D00346D9C /* ViewController.swift */,
 				7E6C4A9F2174965D00346D9C /* Main.storyboard */,
@@ -186,7 +177,6 @@
 			files = (
 				7E4D2F4F21770D10008420DC /* Dung-Quen-Ten-Anh-Hoa-Vinh.mp3 in Resources */,
 				7E6C4AA62174965E00346D9C /* LaunchScreen.storyboard in Resources */,
-				7ED4EA092175A52000148B79 /* Viet-Nam-Da-LAB.mp4 in Resources */,
 				7E40324A2178405A00BA3A53 /* test.mp4 in Resources */,
 				7E6C4AA32174965E00346D9C /* Assets.xcassets in Resources */,
 				7E4032482178403D00BA3A53 /* splited.mp4 in Resources */,
