@@ -1,0 +1,770 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		059BE554CDC3A7CE9AF34147C4414D6C /* Pods-VideoEditorSDK_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EA213E0DB0D8CDB419DEA093E7B3B36 /* Pods-VideoEditorSDK_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		106CDF113B4B371B94BD555C93F0807D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB87367D9B5B48A3CBB2B5DFD7573959 /* Foundation.framework */; };
+		1084081F5846918DA318BD9B7AC4A559 /* VideoEditorSDK-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 268A5F9CEA4F68F427C415481524C2C9 /* VideoEditorSDK-dummy.m */; };
+		14D0A7BFA8EA0B2C39352698161F2936 /* VEFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298A74FDE63D17987CDA47C31C203575 /* VEFile.swift */; };
+		17DC1272D2BD54D822BC8380992DBFBA /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD3A287BB87F4D3C474EC576926A0F89 /* AVFoundation.framework */; };
+		2E8338055F32FAF1AF0FD9D188E31D00 /* Pods-VideoEditorSDK_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 08C45FB419BF8CD3BAE1F5C04BF8E548 /* Pods-VideoEditorSDK_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3D55EC3BCA08605983D960EF6FEFE622 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB87367D9B5B48A3CBB2B5DFD7573959 /* Foundation.framework */; };
+		5369A1F0A906C52732A1207F6EA1D1F2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB87367D9B5B48A3CBB2B5DFD7573959 /* Foundation.framework */; };
+		6F1CCCE86F4CECE11E55C6FE99B5CC11 /* VEManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B97034927338A655EEF5F1A3EA5737 /* VEManager.swift */; };
+		75632CA70D228FFD93385FDC8F39176B /* VEExport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3F39AE67F5582707382C6F390FD00C /* VEExport.swift */; };
+		9B90EA89DDCBDECAF312867B715B95AC /* Pods-VideoEditorSDK_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B7D7C2B5307367C36A047BAA9A47A8C /* Pods-VideoEditorSDK_Example-dummy.m */; };
+		9CDB75AAB81FF493EF70FB137DFE6656 /* Pods-VideoEditorSDK_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 553D61762D173A8D5618DFD0B34D0772 /* Pods-VideoEditorSDK_Tests-dummy.m */; };
+		B28E070D6B88CD14BA8E76AEA83F90FB /* DPVideoMerger.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47979988F11DF491DA2065B7472C3E7 /* DPVideoMerger.swift */; };
+		BF61B7EFE5B4DEC6FCBD9AC79E83C578 /* VideoEditorSDK-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 75C7FE965EB1B3D25FFE4AE2083A4844 /* VideoEditorSDK-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EC244ECF3AA9F20A7BC7A0B7E4153343 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63C4BD65EEF247D4C8A723C0F18B326C /* UIKit.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		71D499A78A272BA7191EBF0F97ADFB99 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A0C5D30068C02117604070DCD309147B;
+			remoteInfo = VideoEditorSDK;
+		};
+		7E7D9E02599B3BD70941443D1B307746 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E7CFA3F52DD6CD6B39E4655C4264F289;
+			remoteInfo = "Pods-VideoEditorSDK_Example";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		08C45FB419BF8CD3BAE1F5C04BF8E548 /* Pods-VideoEditorSDK_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-VideoEditorSDK_Tests-umbrella.h"; sourceTree = "<group>"; };
+		0CCB7B67E597EBA0BBB4C13DB278F222 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0CCF17E6C8EC0ACD65F6D61CA6D89162 /* VideoEditorSDK-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "VideoEditorSDK-prefix.pch"; sourceTree = "<group>"; };
+		1461580E3821ADC4F9F7C3D69D3A341D /* Pods-VideoEditorSDK_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-VideoEditorSDK_Tests.modulemap"; sourceTree = "<group>"; };
+		197EAAB1AFDDAE45E0FAFC663ECCEC56 /* VideoEditorSDK.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = VideoEditorSDK.modulemap; sourceTree = "<group>"; };
+		1EA5C20C893C65E39667F7E586FBF771 /* Pods-VideoEditorSDK_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-VideoEditorSDK_Example-frameworks.sh"; sourceTree = "<group>"; };
+		268A5F9CEA4F68F427C415481524C2C9 /* VideoEditorSDK-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "VideoEditorSDK-dummy.m"; sourceTree = "<group>"; };
+		298A74FDE63D17987CDA47C31C203575 /* VEFile.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = VEFile.swift; path = VideoEditorSDK/Classes/VEFile.swift; sourceTree = "<group>"; };
+		2B7D7C2B5307367C36A047BAA9A47A8C /* Pods-VideoEditorSDK_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-VideoEditorSDK_Example-dummy.m"; sourceTree = "<group>"; };
+		2EE76F80C6878245B05F022E763FFA99 /* VideoEditorSDK.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; path = VideoEditorSDK.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		3A3DFE51A5617B8C2E2B0A321A21224A /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3D3F39AE67F5582707382C6F390FD00C /* VEExport.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = VEExport.swift; path = VideoEditorSDK/Classes/VEExport.swift; sourceTree = "<group>"; };
+		44B97034927338A655EEF5F1A3EA5737 /* VEManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = VEManager.swift; path = VideoEditorSDK/Classes/VEManager.swift; sourceTree = "<group>"; };
+		4C390A3ED12A69B734355DD18949DAF5 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		553D61762D173A8D5618DFD0B34D0772 /* Pods-VideoEditorSDK_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-VideoEditorSDK_Tests-dummy.m"; sourceTree = "<group>"; };
+		57B6C46D13C29129F2226A3941BADAB3 /* VideoEditorSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = VideoEditorSDK.framework; path = VideoEditorSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5F99CAD97F93F79EEF833D3019C47B9E /* Pods_VideoEditorSDK_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_VideoEditorSDK_Example.framework; path = "Pods-VideoEditorSDK_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		63C4BD65EEF247D4C8A723C0F18B326C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		6F2C954790421D33C21EECA1797A46F1 /* Pods-VideoEditorSDK_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-VideoEditorSDK_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
+		75C7FE965EB1B3D25FFE4AE2083A4844 /* VideoEditorSDK-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "VideoEditorSDK-umbrella.h"; sourceTree = "<group>"; };
+		76EE2369EBEDDC51C1A483B6C6C195DF /* Pods-VideoEditorSDK_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-VideoEditorSDK_Example.release.xcconfig"; sourceTree = "<group>"; };
+		7EA213E0DB0D8CDB419DEA093E7B3B36 /* Pods-VideoEditorSDK_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-VideoEditorSDK_Example-umbrella.h"; sourceTree = "<group>"; };
+		80062057A6ACC625492A31AC36D77AD8 /* Pods_VideoEditorSDK_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_VideoEditorSDK_Tests.framework; path = "Pods-VideoEditorSDK_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		83EA262B74C057DA02829D2AC1AD71A1 /* Pods-VideoEditorSDK_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-VideoEditorSDK_Tests-resources.sh"; sourceTree = "<group>"; };
+		8467C926BD36252AA88847DC1B5F65E0 /* Pods-VideoEditorSDK_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-VideoEditorSDK_Example-acknowledgements.plist"; sourceTree = "<group>"; };
+		88158CD57B3094F08427D4798115FBB3 /* Pods-VideoEditorSDK_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-VideoEditorSDK_Example.modulemap"; sourceTree = "<group>"; };
+		89C55FCFED98B70EE1B9EA882BC7BE20 /* Pods-VideoEditorSDK_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-VideoEditorSDK_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		95A88509ED5D44612A69E3A0A594F6EF /* Pods-VideoEditorSDK_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-VideoEditorSDK_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		9880605DC97152B7F5F2F3848485EA11 /* VideoEditorSDK.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = VideoEditorSDK.xcconfig; sourceTree = "<group>"; };
+		AEF8B2604E64142B2770545E15B205C2 /* Pods-VideoEditorSDK_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-VideoEditorSDK_Tests-frameworks.sh"; sourceTree = "<group>"; };
+		B880EA2A8EDA6549E10E9BE53A3B618C /* Pods-VideoEditorSDK_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-VideoEditorSDK_Example-resources.sh"; sourceTree = "<group>"; };
+		CB87367D9B5B48A3CBB2B5DFD7573959 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		D5953F550488CA50453C99651F0EE7CC /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		E9CB51D5715F2085B5E97851827CFD74 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F0118780FE3BD914B8A6F5ACD9D88AA0 /* Pods-VideoEditorSDK_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-VideoEditorSDK_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		F47979988F11DF491DA2065B7472C3E7 /* DPVideoMerger.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DPVideoMerger.swift; path = VideoEditorSDK/Classes/DPVideoMerger.swift; sourceTree = "<group>"; };
+		F5DDAA3507DDBBBD347D8ACFD9306A5F /* Pods-VideoEditorSDK_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-VideoEditorSDK_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		FD3A287BB87F4D3C474EC576926A0F89 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/AVFoundation.framework; sourceTree = DEVELOPER_DIR; };
+		FEA3C85AFC178C0F31B323357E837F7F /* Pods-VideoEditorSDK_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-VideoEditorSDK_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		242C39EB7DAA946D8E5DB1226509052A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				106CDF113B4B371B94BD555C93F0807D /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		253ED4A5B72BC6A5336B227C92DB334E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3D55EC3BCA08605983D960EF6FEFE622 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF2B7A3BC1171BA0C7D939F18E22D9C3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				17DC1272D2BD54D822BC8380992DBFBA /* AVFoundation.framework in Frameworks */,
+				5369A1F0A906C52732A1207F6EA1D1F2 /* Foundation.framework in Frameworks */,
+				EC244ECF3AA9F20A7BC7A0B7E4153343 /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		122DA2E5084A4393C29BE363C764795C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				715827B6A84C2549CD0FBA09A28FA485 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		21E6C24CF69CDDF023F1D96772061214 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				475AECA0F96711FC9C289682C8785C4E /* Pods-VideoEditorSDK_Example */,
+				B3BD08CA5731BF746ABB1FA0A6E5033E /* Pods-VideoEditorSDK_Tests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		23E2047ECFC192DF9D45C9FB3399CE33 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				D5953F550488CA50453C99651F0EE7CC /* LICENSE */,
+				4C390A3ED12A69B734355DD18949DAF5 /* README.md */,
+				2EE76F80C6878245B05F022E763FFA99 /* VideoEditorSDK.podspec */,
+			);
+			name = Pod;
+			sourceTree = "<group>";
+		};
+		475AECA0F96711FC9C289682C8785C4E /* Pods-VideoEditorSDK_Example */ = {
+			isa = PBXGroup;
+			children = (
+				E9CB51D5715F2085B5E97851827CFD74 /* Info.plist */,
+				88158CD57B3094F08427D4798115FBB3 /* Pods-VideoEditorSDK_Example.modulemap */,
+				89C55FCFED98B70EE1B9EA882BC7BE20 /* Pods-VideoEditorSDK_Example-acknowledgements.markdown */,
+				8467C926BD36252AA88847DC1B5F65E0 /* Pods-VideoEditorSDK_Example-acknowledgements.plist */,
+				2B7D7C2B5307367C36A047BAA9A47A8C /* Pods-VideoEditorSDK_Example-dummy.m */,
+				1EA5C20C893C65E39667F7E586FBF771 /* Pods-VideoEditorSDK_Example-frameworks.sh */,
+				B880EA2A8EDA6549E10E9BE53A3B618C /* Pods-VideoEditorSDK_Example-resources.sh */,
+				7EA213E0DB0D8CDB419DEA093E7B3B36 /* Pods-VideoEditorSDK_Example-umbrella.h */,
+				95A88509ED5D44612A69E3A0A594F6EF /* Pods-VideoEditorSDK_Example.debug.xcconfig */,
+				76EE2369EBEDDC51C1A483B6C6C195DF /* Pods-VideoEditorSDK_Example.release.xcconfig */,
+			);
+			name = "Pods-VideoEditorSDK_Example";
+			path = "Target Support Files/Pods-VideoEditorSDK_Example";
+			sourceTree = "<group>";
+		};
+		715827B6A84C2549CD0FBA09A28FA485 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				FD3A287BB87F4D3C474EC576926A0F89 /* AVFoundation.framework */,
+				CB87367D9B5B48A3CBB2B5DFD7573959 /* Foundation.framework */,
+				63C4BD65EEF247D4C8A723C0F18B326C /* UIKit.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				E3949202DA4C64242904C60371392971 /* Development Pods */,
+				122DA2E5084A4393C29BE363C764795C /* Frameworks */,
+				FED7CB0DFFF872D5DF5229743452048B /* Products */,
+				21E6C24CF69CDDF023F1D96772061214 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		A9480EDAFD44B07727AE990EA99E43B6 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				3A3DFE51A5617B8C2E2B0A321A21224A /* Info.plist */,
+				197EAAB1AFDDAE45E0FAFC663ECCEC56 /* VideoEditorSDK.modulemap */,
+				9880605DC97152B7F5F2F3848485EA11 /* VideoEditorSDK.xcconfig */,
+				268A5F9CEA4F68F427C415481524C2C9 /* VideoEditorSDK-dummy.m */,
+				0CCF17E6C8EC0ACD65F6D61CA6D89162 /* VideoEditorSDK-prefix.pch */,
+				75C7FE965EB1B3D25FFE4AE2083A4844 /* VideoEditorSDK-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/VideoEditorSDK";
+			sourceTree = "<group>";
+		};
+		B3BD08CA5731BF746ABB1FA0A6E5033E /* Pods-VideoEditorSDK_Tests */ = {
+			isa = PBXGroup;
+			children = (
+				0CCB7B67E597EBA0BBB4C13DB278F222 /* Info.plist */,
+				1461580E3821ADC4F9F7C3D69D3A341D /* Pods-VideoEditorSDK_Tests.modulemap */,
+				FEA3C85AFC178C0F31B323357E837F7F /* Pods-VideoEditorSDK_Tests-acknowledgements.markdown */,
+				6F2C954790421D33C21EECA1797A46F1 /* Pods-VideoEditorSDK_Tests-acknowledgements.plist */,
+				553D61762D173A8D5618DFD0B34D0772 /* Pods-VideoEditorSDK_Tests-dummy.m */,
+				AEF8B2604E64142B2770545E15B205C2 /* Pods-VideoEditorSDK_Tests-frameworks.sh */,
+				83EA262B74C057DA02829D2AC1AD71A1 /* Pods-VideoEditorSDK_Tests-resources.sh */,
+				08C45FB419BF8CD3BAE1F5C04BF8E548 /* Pods-VideoEditorSDK_Tests-umbrella.h */,
+				F0118780FE3BD914B8A6F5ACD9D88AA0 /* Pods-VideoEditorSDK_Tests.debug.xcconfig */,
+				F5DDAA3507DDBBBD347D8ACFD9306A5F /* Pods-VideoEditorSDK_Tests.release.xcconfig */,
+			);
+			name = "Pods-VideoEditorSDK_Tests";
+			path = "Target Support Files/Pods-VideoEditorSDK_Tests";
+			sourceTree = "<group>";
+		};
+		D33248BE17121EEC8C6ACC7B154C871B /* VideoEditorSDK */ = {
+			isa = PBXGroup;
+			children = (
+				F47979988F11DF491DA2065B7472C3E7 /* DPVideoMerger.swift */,
+				3D3F39AE67F5582707382C6F390FD00C /* VEExport.swift */,
+				298A74FDE63D17987CDA47C31C203575 /* VEFile.swift */,
+				44B97034927338A655EEF5F1A3EA5737 /* VEManager.swift */,
+				23E2047ECFC192DF9D45C9FB3399CE33 /* Pod */,
+				A9480EDAFD44B07727AE990EA99E43B6 /* Support Files */,
+			);
+			name = VideoEditorSDK;
+			path = ../..;
+			sourceTree = "<group>";
+		};
+		E3949202DA4C64242904C60371392971 /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D33248BE17121EEC8C6ACC7B154C871B /* VideoEditorSDK */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		FED7CB0DFFF872D5DF5229743452048B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5F99CAD97F93F79EEF833D3019C47B9E /* Pods_VideoEditorSDK_Example.framework */,
+				80062057A6ACC625492A31AC36D77AD8 /* Pods_VideoEditorSDK_Tests.framework */,
+				57B6C46D13C29129F2226A3941BADAB3 /* VideoEditorSDK.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		0123113CD3E1790B6A154BEE3E2475DA /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF61B7EFE5B4DEC6FCBD9AC79E83C578 /* VideoEditorSDK-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		63F87BE2D2037F3E60BF2BDE35800544 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2E8338055F32FAF1AF0FD9D188E31D00 /* Pods-VideoEditorSDK_Tests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7FBF021BFF65E31E7B0260F9FB1AD018 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				059BE554CDC3A7CE9AF34147C4414D6C /* Pods-VideoEditorSDK_Example-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		5308A55CDF00BF90A1A1B301A953F779 /* Pods-VideoEditorSDK_Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A077AFC2CD5680A1BA9C225E1CD7567E /* Build configuration list for PBXNativeTarget "Pods-VideoEditorSDK_Tests" */;
+			buildPhases = (
+				E07F2425E2E5B522F39849C0F81387D0 /* Sources */,
+				253ED4A5B72BC6A5336B227C92DB334E /* Frameworks */,
+				63F87BE2D2037F3E60BF2BDE35800544 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				56112F66A0ED2B33B1AC23398F7C697B /* PBXTargetDependency */,
+			);
+			name = "Pods-VideoEditorSDK_Tests";
+			productName = "Pods-VideoEditorSDK_Tests";
+			productReference = 80062057A6ACC625492A31AC36D77AD8 /* Pods_VideoEditorSDK_Tests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		A0C5D30068C02117604070DCD309147B /* VideoEditorSDK */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2D2A0594AF0A46E4370A01AE67446D9B /* Build configuration list for PBXNativeTarget "VideoEditorSDK" */;
+			buildPhases = (
+				CF72D275F29957958C39CFAB3E19E8BE /* Sources */,
+				BF2B7A3BC1171BA0C7D939F18E22D9C3 /* Frameworks */,
+				0123113CD3E1790B6A154BEE3E2475DA /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = VideoEditorSDK;
+			productName = VideoEditorSDK;
+			productReference = 57B6C46D13C29129F2226A3941BADAB3 /* VideoEditorSDK.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		E7CFA3F52DD6CD6B39E4655C4264F289 /* Pods-VideoEditorSDK_Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 664CD17CD5C37CB607522EAA9184731B /* Build configuration list for PBXNativeTarget "Pods-VideoEditorSDK_Example" */;
+			buildPhases = (
+				AF9049612C90F925D149CEBF32773C0A /* Sources */,
+				242C39EB7DAA946D8E5DB1226509052A /* Frameworks */,
+				7FBF021BFF65E31E7B0260F9FB1AD018 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2E495E963F722E9018BD31C9962E5E5D /* PBXTargetDependency */,
+			);
+			name = "Pods-VideoEditorSDK_Example";
+			productName = "Pods-VideoEditorSDK_Example";
+			productReference = 5F99CAD97F93F79EEF833D3019C47B9E /* Pods_VideoEditorSDK_Example.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 0930;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = FED7CB0DFFF872D5DF5229743452048B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E7CFA3F52DD6CD6B39E4655C4264F289 /* Pods-VideoEditorSDK_Example */,
+				5308A55CDF00BF90A1A1B301A953F779 /* Pods-VideoEditorSDK_Tests */,
+				A0C5D30068C02117604070DCD309147B /* VideoEditorSDK */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AF9049612C90F925D149CEBF32773C0A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9B90EA89DDCBDECAF312867B715B95AC /* Pods-VideoEditorSDK_Example-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF72D275F29957958C39CFAB3E19E8BE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B28E070D6B88CD14BA8E76AEA83F90FB /* DPVideoMerger.swift in Sources */,
+				75632CA70D228FFD93385FDC8F39176B /* VEExport.swift in Sources */,
+				14D0A7BFA8EA0B2C39352698161F2936 /* VEFile.swift in Sources */,
+				6F1CCCE86F4CECE11E55C6FE99B5CC11 /* VEManager.swift in Sources */,
+				1084081F5846918DA318BD9B7AC4A559 /* VideoEditorSDK-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E07F2425E2E5B522F39849C0F81387D0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9CDB75AAB81FF493EF70FB137DFE6656 /* Pods-VideoEditorSDK_Tests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2E495E963F722E9018BD31C9962E5E5D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = VideoEditorSDK;
+			target = A0C5D30068C02117604070DCD309147B /* VideoEditorSDK */;
+			targetProxy = 71D499A78A272BA7191EBF0F97ADFB99 /* PBXContainerItemProxy */;
+		};
+		56112F66A0ED2B33B1AC23398F7C697B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-VideoEditorSDK_Example";
+			target = E7CFA3F52DD6CD6B39E4655C4264F289 /* Pods-VideoEditorSDK_Example */;
+			targetProxy = 7E7D9E02599B3BD70941443D1B307746 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0FD71038740B9E1B618AF551BDBBBF88 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F5DDAA3507DDBBBD347D8ACFD9306A5F /* Pods-VideoEditorSDK_Tests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-VideoEditorSDK_Tests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-VideoEditorSDK_Tests/Pods-VideoEditorSDK_Tests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		2B8F9B671589D46E7BC2A49DB67DF305 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 95A88509ED5D44612A69E3A0A594F6EF /* Pods-VideoEditorSDK_Example.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-VideoEditorSDK_Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-VideoEditorSDK_Example/Pods-VideoEditorSDK_Example.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		4F67B62D519D855F6188F77453BA301B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9880605DC97152B7F5F2F3848485EA11 /* VideoEditorSDK.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/VideoEditorSDK/VideoEditorSDK-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/VideoEditorSDK/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/VideoEditorSDK/VideoEditorSDK.modulemap";
+				PRODUCT_MODULE_NAME = VideoEditorSDK;
+				PRODUCT_NAME = VideoEditorSDK;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		7FDB21821C4161EE67909C00128A20EA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F0118780FE3BD914B8A6F5ACD9D88AA0 /* Pods-VideoEditorSDK_Tests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-VideoEditorSDK_Tests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-VideoEditorSDK_Tests/Pods-VideoEditorSDK_Tests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		8B33C5230DE4A9DFA6D8F46505DD7AF7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		B0B2F9495349F237055B3143C1EE1375 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9880605DC97152B7F5F2F3848485EA11 /* VideoEditorSDK.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/VideoEditorSDK/VideoEditorSDK-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/VideoEditorSDK/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/VideoEditorSDK/VideoEditorSDK.modulemap";
+				PRODUCT_MODULE_NAME = VideoEditorSDK;
+				PRODUCT_NAME = VideoEditorSDK;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		B42B54097A876E8A982CBF5DAA91B1AB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		D0B5A0310A843C77EBDEC7B9EC2BC6DB /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 76EE2369EBEDDC51C1A483B6C6C195DF /* Pods-VideoEditorSDK_Example.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-VideoEditorSDK_Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-VideoEditorSDK_Example/Pods-VideoEditorSDK_Example.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D2A0594AF0A46E4370A01AE67446D9B /* Build configuration list for PBXNativeTarget "VideoEditorSDK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4F67B62D519D855F6188F77453BA301B /* Debug */,
+				B0B2F9495349F237055B3143C1EE1375 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8B33C5230DE4A9DFA6D8F46505DD7AF7 /* Debug */,
+				B42B54097A876E8A982CBF5DAA91B1AB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		664CD17CD5C37CB607522EAA9184731B /* Build configuration list for PBXNativeTarget "Pods-VideoEditorSDK_Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2B8F9B671589D46E7BC2A49DB67DF305 /* Debug */,
+				D0B5A0310A843C77EBDEC7B9EC2BC6DB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A077AFC2CD5680A1BA9C225E1CD7567E /* Build configuration list for PBXNativeTarget "Pods-VideoEditorSDK_Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7FDB21821C4161EE67909C00128A20EA /* Debug */,
+				0FD71038740B9E1B618AF551BDBBBF88 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}

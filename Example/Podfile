@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'VideoEditorSDK_Example' do
+  pod 'VideoEditorSDK', :path => '../VideoEditorSDK/Class/'
+
+  target 'VideoEditorSDK_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end

@@ -1,0 +1,6 @@
+framework module VideoEditorSDK {
+  umbrella header "VideoEditorSDK-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,16 @@
+PODS:
+  - VideoEditorSDK (0.1.0)
+
+DEPENDENCIES:
+  - VideoEditorSDK (from `../`)
+
+EXTERNAL SOURCES:
+  VideoEditorSDK:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  VideoEditorSDK: cdfd2de71027cb43a024d74885996f1ab5feb6bb
+
+PODFILE CHECKSUM: ecb36a9e6feb7fcb6c95462e44b7b2dc5d59895b
+
+COCOAPODS: 1.5.3
