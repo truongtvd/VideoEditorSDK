@@ -9,14 +9,14 @@
 import UIKit
 import AVFoundation
 
-enum InputType {
+public enum VEInputType {
     case document
     case cache
     case project
 }
 
-class VEFile {
-    class func path(_ from:InputType = .document,name:String)->URL?{
+public class VEFile {
+    public class func url(_ from:VEInputType = .document,name:String)->URL?{
         if from == .document {
             let url = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent(name)
             return url
@@ -32,18 +32,9 @@ class VEFile {
         }
     }
     
-    class func existFile(url:URL){
-        if FileManager.default.fileExists(atPath: url.path) {
-            do {
-                try FileManager.default.removeItem(at: url)
-            }catch (let error){
-                print("error = \(error.localizedDescription)")
-            }
-        }
-    }
     
-    class func asset(_ from:InputType = .document,name:String)->AVAsset?{
-        if let p = self.path(from, name: name) {
+    public class func asset(_ from:VEInputType = .document,name:String)->AVAsset?{
+        if let p = self.url(from, name: name) {
             return AVAsset(url: p)
         }
         return nil
