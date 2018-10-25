@@ -9,8 +9,15 @@
 import UIKit
 import AVKit
 
-public class VEMerge {
-    public class func mergeAudioToVideo(urlVideo:URL,urlAudio:URL,outputURL:URL,outputType:AVFileType,quality:String,completion:@escaping (_ export:AVAssetExportSession?)->Void){
+extension VEManager {
+    public func mergeAudioToVideo(urlVideo:URL,
+                                        urlAudio:URL,
+                                        outputURL:URL,
+                                        outputType:AVFileType,
+                                        quality:String = AVAssetExportPresetHighestQuality,
+                                        progress: @escaping (_ exporter:AVAssetExportSession?)->Void,
+                                        completion:@escaping (_ export:AVAssetExportSession?)->Void)
+    {
         try? FileManager.default.removeItem(at: outputURL)
         let mixComposition = AVMutableComposition()
         let assetVideo = AVAsset(url: urlVideo)
@@ -21,7 +28,7 @@ public class VEMerge {
             return
         }
         do {
-            try videoTrack.insertTimeRange(CMTimeRangeMake(start: CMTime.zero, duration: assetVideo.duration), of: assetVideo.tracks(withMediaType: .video)[0], at: CMTime.zero)
+            try videoTrack.insertTimeRange(CMTimeRangeMake(kCMTimeZero, assetVideo.duration), of: assetVideo.tracks(withMediaType: .video)[0], at: kCMTimeZero)
         }catch(let error){
             print("error = \(error.localizedDescription)")
             completion(nil)
@@ -31,30 +38,28 @@ public class VEMerge {
             return
         }
         do {
-            try audioTrack.insertTimeRange(CMTimeRangeMake(start: CMTime.zero, duration: assetVideo.duration), of: assetAudio.tracks(withMediaType: .audio)[0], at: CMTime.zero)
+            try audioTrack.insertTimeRange(CMTimeRangeMake(kCMTimeZero, assetVideo.duration), of: assetAudio.tracks(withMediaType: .audio)[0], at: kCMTimeZero)
         }catch(let error){
             print("error = \(error.localizedDescription)")
         }
         
-        guard let exporter = AVAssetExportSession(asset: mixComposition,
-                                                  presetName: quality) else {
-                                                    return
+        self.asset = VEAssetExportSession(asset: mixComposition, quality: quality, fileType: outputType, outputURL: outputURL, composition: nil)
+        self.asset?.closureProgress = {
+            progress(self.asset?.session)
         }
-        exporter.outputURL = outputURL
-        exporter.outputFileType = outputType
-        exporter.shouldOptimizeForNetworkUse = true
-        
-        
-        // 6 - Perform the Export
-        exporter.exportAsynchronously {
-            DispatchQueue.main.async {
-                completion(exporter)
-            }
+        self.asset?.session?.exportAsynchronously {
+            completion(self.asset?.session)
         }
     }
     
     
-    public class func mergeVideos(withFileURLs videoFileURLs: [URL],outputURL:URL?,mediaType:AVFileType, completion: @escaping (_ exporter:AVAssetExportSession?, _ error: Error?) -> Void) {
+    public func mergeVideos(withFileURLs videoFileURLs: [URL],
+                                  outputURL:URL?,
+                                  mediaType:AVFileType,
+                                  quality:String = AVAssetExportPresetHighestQuality,
+                                  progress: @escaping (_ exporter:AVAssetExportSession?)->Void,
+                                  completion: @escaping (_ exporter:AVAssetExportSession?, _ error: Error?) -> Void)
+    {
         
         let composition = AVMutableComposition()
         guard let videoTrack: AVMutableCompositionTrack = composition.addMutableTrack(withMediaType: .video, preferredTrackID: kCMPersistentTrackID_Invalid) else {
@@ -67,7 +72,7 @@ public class VEMerge {
         }
         var instructions = [AVVideoCompositionInstructionProtocol]()
         var isError = false
-        var currentTime: CMTime = .zero
+        var currentTime: CMTime = kCMTimeZero
         var videoSize = CGSize.zero
         var highestFrameRate = 0
         for  videoFileURL in videoFileURLs {
@@ -98,14 +103,14 @@ public class VEMerge {
             }
             let currentFrameRate = Int(roundf((videoAsset.nominalFrameRate)))
             highestFrameRate = (currentFrameRate > highestFrameRate) ? currentFrameRate : highestFrameRate
-            let trimmingTime: CMTime = CMTimeMake(value: Int64(lround(Double((videoAsset.nominalFrameRate) / (videoAsset.nominalFrameRate)))), timescale: Int32((videoAsset.nominalFrameRate)))
-            let timeRange: CMTimeRange = CMTimeRangeMake(start: trimmingTime, duration: CMTimeSubtract((videoAsset.timeRange.duration), trimmingTime))
+            let trimmingTime: CMTime = CMTimeMake(Int64(lround(Double((videoAsset.nominalFrameRate) / (videoAsset.nominalFrameRate)))), Int32((videoAsset.nominalFrameRate)))
+            let timeRange: CMTimeRange = CMTimeRangeMake(trimmingTime, CMTimeSubtract((videoAsset.timeRange.duration), trimmingTime))
             do {
                 try videoTrack.insertTimeRange(timeRange, of: videoAsset, at: currentTime)
                 try audioTrack.insertTimeRange(timeRange, of: audioAsset, at: currentTime)
                 
                 let videoCompositionInstruction = AVMutableVideoCompositionInstruction.init()
-                videoCompositionInstruction.timeRange = CMTimeRangeMake(start: currentTime, duration: timeRange.duration)
+                videoCompositionInstruction.timeRange = CMTimeRangeMake(currentTime, timeRange.duration)
                 let layerInstruction = AVMutableVideoCompositionLayerInstruction(assetTrack: videoTrack)
                 
                 var tx: Int = 0
@@ -132,7 +137,7 @@ public class VEMerge {
                     }
                 }
                 let Move = CGAffineTransform(translationX: CGFloat(tx), y: CGFloat(ty))
-                layerInstruction.setTransform(Scale.concatenating(Move), at: CMTime.zero)
+                layerInstruction.setTransform(Scale.concatenating(Move), at: kCMTimeZero)
                 videoCompositionInstruction.layerInstructions = [layerInstruction]
                 instructions.append(videoCompositionInstruction)
                 currentTime = CMTimeAdd(currentTime, timeRange.duration)
@@ -143,32 +148,28 @@ public class VEMerge {
             }
         }
         if isError == false {
-            guard let exportSession = AVAssetExportSession(asset: composition, presetName: AVAssetExportPresetHighestQuality) else {
-                completion(nil,NSError.message("Export error"))
-                return
-            }
+            let mutableVideoComposition = AVMutableVideoComposition.init()
+            mutableVideoComposition.instructions = instructions
+            mutableVideoComposition.frameDuration = CMTimeMake(1, Int32(highestFrameRate))
+            mutableVideoComposition.renderSize = videoSize
+            
             let urlDefault: URL = defaultOutputURL()
             if outputURL == nil {
                 try? FileManager.default.removeItem(atPath: urlDefault.path)
             }else{
                 try? FileManager.default.removeItem(atPath: outputURL?.path ?? "")
             }
-            exportSession.outputURL = outputURL ?? urlDefault
-            exportSession.outputFileType = mediaType
-            exportSession.shouldOptimizeForNetworkUse = true
             
-            let mutableVideoComposition = AVMutableVideoComposition.init()
-            mutableVideoComposition.instructions = instructions
-            mutableVideoComposition.frameDuration = CMTimeMake(value: 1, timescale: Int32(highestFrameRate))
-            mutableVideoComposition.renderSize = videoSize
-            exportSession.videoComposition = mutableVideoComposition
-            
-            exportSession.exportAsynchronously {
-                completion(exportSession,exportSession.error)
+            self.asset = VEAssetExportSession(asset: composition, quality:quality, fileType: mediaType, outputURL: outputURL ?? urlDefault, composition: mutableVideoComposition)
+            self.asset?.closureProgress = {
+                progress(self.asset?.session)
+            }
+            self.asset?.session?.exportAsynchronously {
+                completion(self.asset?.session,self.asset?.session?.error)
             }
         }
     }
-    class func defaultOutputURL() -> URL {
+    public func defaultOutputURL() -> URL {
         return VEFile.url(.document, name: "\(UUID().uuidString)-mergedVideo.mp4")!
     }
 }

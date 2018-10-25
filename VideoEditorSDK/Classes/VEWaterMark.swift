@@ -10,183 +10,178 @@ import AVFoundation
 
 
 public enum VEWatermarkPosition {
-    case TopLeft
-    case TopRight
-    case BottomLeft
-    case BottomRight
-    case Default
+    case topLeft
+    case topRight
+    case bottomLeft
+    case bottomRight
+    case point
 }
 
-public struct VEWaterMarkText {
-    let text : String
-    let font : UIFont
-    let fontSize : CGFloat
-    let backgroundColor : UIColor
-    let bounds : CGRect
+public struct VEWaterMarkPhoto {
+    var photo : UIImage!
+    var point : CGPoint = CGPoint.zero
+    var position : VEWatermarkPosition = .point
+    var size : CGSize = CGSize(width: 57.0, height: 57.0)
+    var opacity : Float = 0.65
+    
+    public init (_ photo : UIImage,
+                 point:CGPoint = CGPoint.zero,
+                 position:VEWatermarkPosition = .point ,
+                 size:CGSize = CGSize(width: 57.0, height: 57.0),
+                 opacity : Float = 0.65){
+        self.photo = photo
+        self.point = point
+        self.position = position
+        self.size = size
+        self.opacity = opacity
+    }
 }
 
-
-public class VEWaterMark {
-
-    public func watermark(videoAsset:AVAsset, text:VEWaterMarkText,outputURL:URL,outputFileType:AVFileType, position : VEWatermarkPosition, completion : @escaping (_ outputURL : URL, _ error:Error?)->Void) {
-        self.watermark(videoAsset: videoAsset, text: text , waterMarkImage: nil , outputURL: outputURL, outputFileType: outputFileType, position: position) { (outputURL, error) in
-            completion(outputURL,error)
-        }
-    }
+public class VEWaterMarkText {
+    public var text : String!
+    public var textColor : UIColor!
+    public var font : CFTypeRef!
+    public var fontSize : CGFloat!
+    public var backgroundColor : UIColor!
+    public var point : CGPoint!
     
-    public func watermark(videoAsset:AVAsset, image:UIImage,outputURL:URL,outputFileType:AVFileType, position : VEWatermarkPosition, completion : @escaping (_ outputURL : URL, _ error:Error?)->Void) {
-        self.watermark(videoAsset: videoAsset, text: nil , waterMarkImage: image , outputURL: outputURL, outputFileType: outputFileType, position: position) { (outputURL, error) in
-            completion(outputURL,error)
-        }
-    }
-    
-    func watermark(videoAsset:AVAsset,  text : VEWaterMarkText?, waterMarkImage: UIImage?,outputURL:URL,outputFileType:AVFileType, position : VEWatermarkPosition,completion : @escaping (_ outputURL : URL, _ error:Error?) -> Void) {
+    public init(_ text:String,
+                textColor:UIColor = .white,
+         font:CFTypeRef = "HelveticaNeue" as CFTypeRef,
+         fontSize:CGFloat = 20,
+         bgColor:UIColor = .black,
+         point:CGPoint = CGPoint(x: 10, y: 10)) {
         
-        DispatchQueue.global().async {
+        self.text = text
+        self.textColor = textColor
+        self.font = font
+        self.fontSize = fontSize
+        self.backgroundColor = bgColor
+        self.point = point
+    }
+}
+
+
+extension VEManager {
+    public func watermark(videoAsset:AVAsset,
+                   text : VEWaterMarkText? = nil,
+                   waterMarkImage: VEWaterMarkPhoto? = nil,
+                   outputURL:URL,
+                   quality:String = AVAssetExportPresetHighestQuality,
+                   outputFileType:AVFileType,
+                   progress : @escaping (_ export : AVAssetExportSession?) -> Void,
+                   completion : @escaping (_ outputURL : URL, _ error:Error?) -> Void)
+    {
+        let mixComposition = AVMutableComposition()
+        let clipVideoTrack = videoAsset.tracks(withMediaType: .video)[0]
+        
+        mixComposition.add(type: .video ,
+                           preferredID: Int32(kCMPersistentTrackID_Invalid),
+                           start: kCMTimeZero,
+                           duration: videoAsset.duration,
+                           track: clipVideoTrack,
+                           at: kCMTimeZero)
+        mixComposition.add(type: .audio ,
+                           preferredID: Int32(0),
+                           start: kCMTimeZero,
+                           duration: videoAsset.duration,
+                           track: videoAsset.tracks(withMediaType: .audio)[0],
+                           at: kCMTimeZero)
+        
+        let videoSize = clipVideoTrack.naturalSize
+        
+        let parentLayer = CALayer()
+        let videoLayer = CALayer()
+        parentLayer.frame = CGRect(x: 0, y: 0, width: videoSize.width , height: videoSize.height)
+        videoLayer.frame = CGRect(x:0,y: 0,width: videoSize.width,height: videoSize.height)
+        parentLayer.addSublayer(videoLayer)
+        
+        if let item = text {
+            let titleLayer = CATextLayer()
+            titleLayer.backgroundColor = item.backgroundColor.cgColor
+            titleLayer.foregroundColor = item.textColor.cgColor
+            titleLayer.string = item.text
+            titleLayer.font = item.font
+            titleLayer.fontSize = item.fontSize
+            titleLayer.alignmentMode = kCAAlignmentCenter
+            titleLayer.bounds = CGRect(x: 0, y: 0, width: videoSize.width , height: videoSize.height)
+            titleLayer.position = item.point
+            parentLayer.addSublayer(titleLayer)
+        }
+        if let img = waterMarkImage {
+            let imageLayer = CALayer()
+            imageLayer.contents = img.photo.cgImage
             
-            let mixComposition = AVMutableComposition()
-            let clipVideoTrack = videoAsset.tracks(withMediaType: .video)[0]
+            var xPosition : CGFloat = 0.0
+            var yPosition : CGFloat = 0.0
             
-            mixComposition.add(type: .video , preferredID: Int32(kCMPersistentTrackID_Invalid), start: .zero, duration: videoAsset.duration, track: videoAsset.tracks(withMediaType: .video)[0], at: .zero)
-            
-            let videoSize = clipVideoTrack.naturalSize
-            
-            let parentLayer = CALayer()
-            let videoLayer = CALayer()
-            parentLayer.frame = CGRect(x: 0, y: 0, width: videoSize.width , height: videoSize.height)
-            videoLayer.frame = CGRect(x:0,y: 0,width: videoSize.width,height: videoSize.height)
-            parentLayer.addSublayer(videoLayer)
-            
-            if let item = text {
-                let titleLayer = CATextLayer()
-                titleLayer.backgroundColor = item.backgroundColor.cgColor
-                titleLayer.string = item.text
-                titleLayer.font = item.font
-                titleLayer.fontSize = item.fontSize
-                titleLayer.alignmentMode = .center
-                titleLayer.bounds = item.bounds
-                parentLayer.addSublayer(titleLayer)
-            } else if let img = waterMarkImage {
-                let imageLayer = CALayer()
-                imageLayer.contents = img.cgImage
-                
-                var xPosition : CGFloat = 0.0
-                var yPosition : CGFloat = 0.0
-                let imageSize : CGFloat = 57.0
-                
-                switch (position) {
-                case .TopLeft:
-                    xPosition = 0
-                    yPosition = 0
-                    break
-                case .TopRight:
-                    xPosition = videoSize.width - imageSize
-                    yPosition = 0
-                    break
-                case .BottomLeft:
-                    xPosition = 0
-                    yPosition = videoSize.height - imageSize
-                    break
-                case .BottomRight, .Default:
-                    xPosition = videoSize.width - imageSize
-                    yPosition = videoSize.height - imageSize
-                    break
-                }
-                
-                
-                imageLayer.frame = CGRect(x:xPosition,y: yPosition,width: imageSize,height: imageSize)
-                imageLayer.opacity = 0.65
-                parentLayer.addSublayer(imageLayer)
+            switch (img.position) {
+            case .bottomLeft:
+                xPosition = 0
+                yPosition = 0
+                break
+            case .bottomRight:
+                xPosition = videoSize.width - img.size.width
+                yPosition = 0
+                break
+            case .topLeft:
+                xPosition = 0
+                yPosition = videoSize.height - img.size.height
+                break
+            case .topRight:
+                xPosition = videoSize.width - img.size.width
+                yPosition = videoSize.height - img.size.height
+                break
+            case .point :
+                xPosition = img.point.x
+                yPosition = img.point.y
+                break
             }
             
-            let videoComp = AVMutableVideoComposition()
-            videoComp.renderSize = videoSize
-            videoComp.frameDuration = CMTimeMake(value: 1, timescale: 30)
-            videoComp.animationTool = AVVideoCompositionCoreAnimationTool(postProcessingAsVideoLayer: videoLayer, in: parentLayer)
             
-            let instruction = AVMutableVideoCompositionInstruction()
-            instruction.timeRange = CMTimeRangeMake(start: .zero , duration: mixComposition.duration)
-            let videoTrack = mixComposition.tracks(withMediaType: .video)[0]
-            
-            let layerInstruction = self.videoCompositionInstruction(videoTrack, asset: videoAsset)
-            
-            instruction.layerInstructions = [layerInstruction]
-            videoComp.instructions = [instruction]
-            
-            
-            
-            guard let exporter = AVAssetExportSession(asset: mixComposition, presetName: AVAssetExportPresetHighestQuality) else {return}
-            exporter.outputURL = outputURL
-            exporter.outputFileType = outputFileType
-            exporter.shouldOptimizeForNetworkUse = true
-            exporter.videoComposition = videoComp
-            
-            exporter.exportAsynchronously {
-                DispatchQueue.main.async {
-                    if exporter.status == .completed {
-                        completion(outputURL,nil)
-                    }else{
-                        completion(outputURL,exporter.error)
-                    }
+            imageLayer.frame = CGRect(x:xPosition,y: yPosition,width: img.size.width,height: img.size.height)
+            imageLayer.opacity = img.opacity
+            parentLayer.addSublayer(imageLayer)
+        }
+        
+        let videoComp = AVMutableVideoComposition()
+        videoComp.renderSize = videoSize
+        videoComp.renderScale = 1.0
+        videoComp.frameDuration = CMTimeMake(1, 30)
+        videoComp.animationTool = AVVideoCompositionCoreAnimationTool(postProcessingAsVideoLayer: videoLayer, in: parentLayer)
+        
+        let instruction = AVMutableVideoCompositionInstruction()
+        instruction.timeRange = CMTimeRangeMake(kCMTimeZero , mixComposition.duration)
+        let videoTrack = mixComposition.tracks(withMediaType: .video)[0]
+        
+        instruction.layerInstructions = [AVMutableVideoCompositionLayerInstruction(assetTrack: videoTrack)]
+        videoComp.instructions = [instruction]
+        
+        
+        self.asset = VEAssetExportSession(asset: mixComposition, quality: quality, fileType: outputFileType, outputURL: outputURL, composition: videoComp)
+        self.asset?.closureProgress = {
+            progress(self.asset?.session)
+        }
+        self.asset?.session?.exportAsynchronously {
+            DispatchQueue.main.async {
+                if self.asset?.session?.status == .completed {
+                    completion(outputURL,nil)
+                }else{
+                    completion(outputURL,self.asset?.session?.error)
                 }
             }
+
         }
     }
     
     
-    public func orientationFromTransform(_ transform: CGAffineTransform)
-        -> (orientation: UIImage.Orientation, isPortrait: Bool) {
-            var assetOrientation = UIImage.Orientation.up
-            var isPortrait = false
-            if transform.a == 0 && transform.b == 1.0 && transform.c == -1.0 && transform.d == 0 {
-                assetOrientation = .right
-                isPortrait = true
-            } else if transform.a == 0 && transform.b == -1.0 && transform.c == 1.0 && transform.d == 0 {
-                assetOrientation = .left
-                isPortrait = true
-            } else if transform.a == 1.0 && transform.b == 0 && transform.c == 0 && transform.d == 1.0 {
-                assetOrientation = .up
-            } else if transform.a == -1.0 && transform.b == 0 && transform.c == 0 && transform.d == -1.0 {
-                assetOrientation = .down
-            }
-            return (assetOrientation, isPortrait)
-    }
-    public func videoCompositionInstruction(_ track: AVCompositionTrack, asset: AVAsset)
-        -> AVMutableVideoCompositionLayerInstruction {
-            let instruction = AVMutableVideoCompositionLayerInstruction(assetTrack: track)
-            let assetTrack = asset.tracks(withMediaType: .video)[0]
-            
-            let transform = assetTrack.preferredTransform
-            let assetInfo = orientationFromTransform(transform)
-            
-            var scaleToFitRatio = UIScreen.main.bounds.width / assetTrack.naturalSize.width
-            if assetInfo.isPortrait {
-                scaleToFitRatio = UIScreen.main.bounds.width / assetTrack.naturalSize.height
-                let scaleFactor = CGAffineTransform(scaleX: scaleToFitRatio, y: scaleToFitRatio)
-                instruction.setTransform(assetTrack.preferredTransform.concatenating(scaleFactor), at: CMTime.zero)
-            } else {
-                let scaleFactor = CGAffineTransform(scaleX: scaleToFitRatio, y: scaleToFitRatio)
-                var concat = assetTrack.preferredTransform.concatenating(scaleFactor)
-                    .concatenating(CGAffineTransform(translationX: 0, y: UIScreen.main.bounds.width / 2))
-                if assetInfo.orientation == .down {
-                    let fixUpsideDown = CGAffineTransform(rotationAngle: CGFloat(Double.pi))
-                    let windowBounds = UIScreen.main.bounds
-                    let yFix = assetTrack.naturalSize.height + windowBounds.height
-                    let centerFix = CGAffineTransform(translationX: assetTrack.naturalSize.width, y: yFix)
-                    concat = fixUpsideDown.concatenating(centerFix).concatenating(scaleFactor)
-                }
-                instruction.setTransform(concat, at: CMTime.zero)
-            }
-            
-            return instruction
-    }
 }
 
 extension AVMutableComposition {
     func add(type:AVMediaType,preferredID:CMPersistentTrackID,start:CMTime,duration:CMTime,track:AVAssetTrack,at:CMTime){
         if let t = self.addMutableTrack(withMediaType: type, preferredTrackID: preferredID) {
             do {
-                try t.insertTimeRange(CMTimeRangeMake(start: start, duration: duration), of: track, at: at)
+                try t.insertTimeRange(CMTimeRangeMake(start, duration), of: track, at: at)
             }catch (let error){
                 print("error = \(error.localizedDescription)")
             }

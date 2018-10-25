@@ -1,0 +1,6 @@
+framework module SMPhotoEditorSDK {
+  umbrella header "SMPhotoEditorSDK-umbrella.h"
+
+  export *
+  module * { export * }
+}

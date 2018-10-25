@@ -1,10 +1,9 @@
 ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES
-CLANG_MODULES_AUTOLINK = YES
-FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/GPUImage" "${PODS_CONFIGURATION_BUILD_DIR}/VideoEditorSDK"
+FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/CropViewController" "${PODS_CONFIGURATION_BUILD_DIR}/JGProgressHUD" "${PODS_CONFIGURATION_BUILD_DIR}/SMPhotoEditorSDK" "${PODS_CONFIGURATION_BUILD_DIR}/VideoEditorSDK"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
 LD_RUNPATH_SEARCH_PATHS = $(inherited) '@executable_path/Frameworks' '@loader_path/Frameworks'
-OTHER_CFLAGS = $(inherited) -iquote "${PODS_CONFIGURATION_BUILD_DIR}/GPUImage/GPUImage.framework/Headers" -iquote "${PODS_CONFIGURATION_BUILD_DIR}/VideoEditorSDK/VideoEditorSDK.framework/Headers"
-OTHER_LDFLAGS = $(inherited) -framework "GPUImage" -framework "VideoEditorSDK"
+OTHER_CFLAGS = $(inherited) -iquote "${PODS_CONFIGURATION_BUILD_DIR}/CropViewController/CropViewController.framework/Headers" -iquote "${PODS_CONFIGURATION_BUILD_DIR}/JGProgressHUD/JGProgressHUD.framework/Headers" -iquote "${PODS_CONFIGURATION_BUILD_DIR}/SMPhotoEditorSDK/SMPhotoEditorSDK.framework/Headers" -iquote "${PODS_CONFIGURATION_BUILD_DIR}/VideoEditorSDK/VideoEditorSDK.framework/Headers"
+OTHER_LDFLAGS = $(inherited) -framework "AVFoundation" -framework "CoreImage" -framework "CropViewController" -framework "JGProgressHUD" -framework "SMPhotoEditorSDK" -framework "UIKit" -framework "VideoEditorSDK"
 OTHER_SWIFT_FLAGS = $(inherited) "-D" "COCOAPODS"
 PODS_BUILD_DIR = ${BUILD_DIR}
 PODS_CONFIGURATION_BUILD_DIR = ${PODS_BUILD_DIR}/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)

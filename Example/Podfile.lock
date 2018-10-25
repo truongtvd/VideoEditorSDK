@@ -1,23 +1,31 @@
 PODS:
-  - GPUImage (0.1.7)
-  - VideoEditorSDK (0.1.0)
+  - CropViewController (2.3.8)
+  - JGProgressHUD (2.0.3)
+  - SMPhotoEditorSDK (0.1.2):
+    - CropViewController (~> 2.3.7)
+  - VideoEditorSDK (0.1.0):
+    - SMPhotoEditorSDK
 
 DEPENDENCIES:
-  - GPUImage
+  - JGProgressHUD
   - VideoEditorSDK (from `../`)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
-    - GPUImage
+    - CropViewController
+    - JGProgressHUD
+    - SMPhotoEditorSDK
 
 EXTERNAL SOURCES:
   VideoEditorSDK:
     :path: "../"
 
 SPEC CHECKSUMS:
-  GPUImage: 733a5f0fab92df9de1c37ba9df520a833ccb406d
-  VideoEditorSDK: cdfd2de71027cb43a024d74885996f1ab5feb6bb
+  CropViewController: 7be882b7d3fb3faef48a41924e80f689e9df2514
+  JGProgressHUD: 12b20a8f4ffe05258f8635c1ab92816e451f904d
+  SMPhotoEditorSDK: 8522c6fa9be0fa488ab91faf49a3fd63936e4835
+  VideoEditorSDK: a1f732435e265b95a8b787bfe197ae18719b5465
 
-PODFILE CHECKSUM: c83ccc7c3a4bbb5e57ef0336607e128babf41f59
+PODFILE CHECKSUM: 8c0338af5dd1cab752f1931d44867bf6b415b0e7
 
 COCOAPODS: 1.5.3
